@@ -8,9 +8,8 @@ xc.set_token('a974d1ebb145840ead809fbf098db57a31d4d51ec4dda6beaadefd5f')
 pro = xc.pro_api(env='prd')
 
 
-def preN_indx(n, trade_date, FirstDeclareDate_ls):
+def preN_indx(trade_date, FirstDeclareDate_ls):
     '''
-    n: 前n个交易日
     trade_date: 交易日历的列表
     FirstDeclareDate_ls: 首次并购日的列表
     '''
@@ -63,7 +62,7 @@ def main(n):
     stkCode = add_stkCode(stkCode)
     
     # 获取前n期在交易日历列表中的索引
-    indx = preN_indx(n, trade_date, FirstDeclareDate_ls)
+    indx = preN_indx(trade_date, FirstDeclareDate_ls)
     
     
     close_ls = []
