@@ -69,7 +69,7 @@ def main(n):
     close_ls = []
     for i in range(len(df)):
         try:
-            close_ls.append(pro.daily(ts_code=stkCode[i], trade_date=trade_date[indx[i]].replace('-',''))['close'].values[0])
+            close_ls.append(pro.daily(ts_code=stkCode[i], trade_date=trade_date[indx[i]-n].replace('-',''))['close'].values[0])
         except:
             print(stkCode[i],"--",trade_date[indx[i]])
     
